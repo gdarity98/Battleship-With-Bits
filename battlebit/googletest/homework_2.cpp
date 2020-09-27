@@ -3,7 +3,20 @@
 char * print_binary_representation(unsigned int i, char *buffer){
     buffer[0] = '0';
     buffer[1] = 'b';
+
     // fill out remaining 32 bits, 1 or 0 depending on the value in the number i
+    unsigned int mask = 1u<<31;
+
+    for(int j = 2; j <= 33; j++){
+        if(mask & i){
+            buffer[j] = '1';
+            mask = mask >> 1u;
+        }else{
+            buffer[j] = '0';
+            mask = mask >> 1u;
+        }
+        //printf(buffer);
+    }
     return buffer;
 }
 
@@ -13,6 +26,7 @@ char * print_binary_representation(unsigned int i, char *buffer){
  *
  * The test below show what the expected values are for given inputs
  */
+ 
 TEST(print_binary_representation, works) {
     // row 1
     char buffer[50] = {0}; // init to 0
@@ -37,14 +51,14 @@ struct Person {
     int age;
 };
 
-void set_my_age(struct Person p) {
-    p.age = 44;
+void set_my_age(struct Person* p) {
+    p->age = 44;
 }
 
 int get_my_age() {
     struct Person me;
     me.name = "Carson";
-    set_my_age(me);
+    set_my_age(&me);
     return me.age;
 }
 

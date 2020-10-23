@@ -1,3 +1,15 @@
 ;; TODO - implement counting up from 1 to 10
 ;; in Little Man Computer assembly
 ;; Paste the code below, along with the output
+        LDA 8
+        OUT 8
+        ADD 9
+        STA 8
+        SUB 7
+        BRP 99
+        BRA 0
+        DAT 11
+        DAT 1
+        DAT 1
+
+Output: 1 2 3 4 5 6 7 8 9 10

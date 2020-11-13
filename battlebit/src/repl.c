@@ -93,10 +93,65 @@ void repl_print_board(game *game, int player, char_buff * buffer) {
 }
 
 void repl_print_ships(player_info *player_info, char_buff *buffer) {
+    //COMPLETE
     // Step 4 - Implement this to print out the visual ships representation
     //  for the console.  You will need to use bit masking for each position
     //  to determine if a ship is at the position or not.  If it is present
     //  you need to print an X.  If not, you need to print a space character ' '
+    unsigned long long int shipsHolder = player_info->ships;
+    unsigned long long int mask = 1ull;
+    char board[181] = "  0 1 2 3 4 5 6 7 \n";
+    char colNum = '0';
+    int iColNum;
+    char space = ' ';
+    //char empty = '_';
+
+    //cb_append(buffer," 0 1 2 3 4 5 6 7 \n");
+    //printf(buffer);
+
+    char star = '*';
+    strncat(board,&colNum,1);
+    strncat(board,&space,1);
+    iColNum = colNum -'0';
+    iColNum++;
+    colNum = iColNum +'0';
+
+    for(int j = 64; j >= 1; j--) {
+        if(j%8 == 0 && j != 64){
+            strncat(board,"\n", 1);
+            strncat(board,&colNum,1);
+            strncat(board,&space,1);
+            iColNum = colNum -'0';
+            iColNum++;
+            colNum = iColNum +'0';
+            if (mask & shipsHolder) {
+                strncat(board,&star,1);
+                strncat(board,&space,1);
+                mask = mask << 1u;
+            } else {
+                strncat(board,&space,1);
+                strncat(board,&space,1);
+                mask = mask << 1u;
+            }
+        }else{
+            if (mask & shipsHolder) {
+                strncat(board,&star,1);
+                strncat(board,&space,1);
+                mask = mask << 1u;
+            } else {
+                strncat(board,&space,1);
+                strncat(board,&space,1);
+                mask = mask << 1u;
+            }
+        }
+        //printf(buffer);
+    }
+
+    strncat(board,"\n", 1);
+
+    cb_append(buffer,board);
+    //printf(buffer);
+    //printf(board);
 }
 
 void repl_print_hits(struct player_info *player_info, struct char_buff *buffer) {

@@ -41,6 +41,7 @@ void game_init_player_info(player_info *player_info) {
 }
 
 int game_fire(game *game, int player, int x, int y) {
+    //Complete
     // Step 5 - This is the crux of the game.  You are going to take a shot from the given player and
     // update all the bit values that store our game state.
     //

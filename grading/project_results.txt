@@ -156,45 +156,45 @@ Expected equality of these values:
 /home/carson/Projects/msu/csci-366-fall2020/grading/scripts/repos/gaberial_darity/battlebit/googletest/game.cpp:46: Failure
 Expected equality of these values:
   game_fire(gameon,1,0,0)
-    Which is: 2046229760
+    Which is: -2111898368
   0
 [  FAILED  ] game_fire.empty_game (0 ms)
 [ RUN      ] game_fire.hit_fire
 /home/carson/Projects/msu/csci-366-fall2020/grading/scripts/repos/gaberial_darity/battlebit/googletest/game.cpp:55: Failure
 Expected equality of these values:
   game_fire(gameon,1,0,0)
-    Which is: 2046229760
+    Which is: -2111898368
   1
 [  FAILED  ] game_fire.hit_fire (0 ms)
 [ RUN      ] game_fire.miss_fire
 /home/carson/Projects/msu/csci-366-fall2020/grading/scripts/repos/gaberial_darity/battlebit/googletest/game.cpp:81: Failure
 Expected equality of these values:
   game_fire(gameon,1,5,0)
-    Which is: 2046229760
+    Which is: -2111898368
   0
 [  FAILED  ] game_fire.miss_fire (0 ms)
 [ RUN      ] game_fire.invalid_fire
 /home/carson/Projects/msu/csci-366-fall2020/grading/scripts/repos/gaberial_darity/battlebit/googletest/game.cpp:136: Failure
 Expected equality of these values:
   game_fire(gameon,1,8,0)
-    Which is: 2046229760
+    Which is: -2111898368
   0
-[  FAILED  ] game_fire.invalid_fire (0 ms)
-[----------] 4 tests from game_fire (0 ms total)
+[  FAILED  ] game_fire.invalid_fire (1 ms)
+[----------] 4 tests from game_fire (1 ms total)
 
 [----------] 2 tests from add_ship_horizontal
 [ RUN      ] add_ship_horizontal.empty_ship
 /home/carson/Projects/msu/csci-366-fall2020/grading/scripts/repos/gaberial_darity/battlebit/googletest/game.cpp:150: Failure
 Expected equality of these values:
   add_ship_horizontal(player_info,1,8,0)
-    Which is: 2046229768
+    Which is: -2111898360
   1
 [  FAILED  ] add_ship_horizontal.empty_ship (0 ms)
 [ RUN      ] add_ship_horizontal.load_ship
 /home/carson/Projects/msu/csci-366-fall2020/grading/scripts/repos/gaberial_darity/battlebit/googletest/game.cpp:160: Failure
 Expected equality of these values:
   add_ship_horizontal(player_info,0,0,5)
-    Which is: 2046229768
+    Which is: -2111898360
   1
 [  FAILED  ] add_ship_horizontal.load_ship (0 ms)
 [----------] 2 tests from add_ship_horizontal (0 ms total)
@@ -204,14 +204,14 @@ Expected equality of these values:
 /home/carson/Projects/msu/csci-366-fall2020/grading/scripts/repos/gaberial_darity/battlebit/googletest/game.cpp:171: Failure
 Expected equality of these values:
   add_ship_vertical(player_info,1,8,0)
-    Which is: 2046229768
+    Which is: -2111898360
   1
 [  FAILED  ] add_ship_vertical.empty_ship (0 ms)
 [ RUN      ] add_ship_vertical.load_ship
 /home/carson/Projects/msu/csci-366-fall2020/grading/scripts/repos/gaberial_darity/battlebit/googletest/game.cpp:181: Failure
 Expected equality of these values:
   add_ship_vertical(player_info,0,0,5)
-    Which is: 2046229768
+    Which is: -2111898360
   1
 [  FAILED  ] add_ship_vertical.load_ship (0 ms)
 [----------] 2 tests from add_ship_vertical (0 ms total)
@@ -221,31 +221,31 @@ Expected equality of these values:
 /home/carson/Projects/msu/csci-366-fall2020/grading/scripts/repos/gaberial_darity/battlebit/googletest/game.cpp:192: Failure
 Expected equality of these values:
   game_load_board(gameon,0,__null)
-    Which is: 2046229760
+    Which is: -2111898368
   -1
-[  FAILED  ] game_load_board.empty_spec (1 ms)
+[  FAILED  ] game_load_board.empty_spec (0 ms)
 [ RUN      ] game_load_board.incomplete_spec
 /home/carson/Projects/msu/csci-366-fall2020/grading/scripts/repos/gaberial_darity/battlebit/googletest/game.cpp:200: Failure
 Expected equality of these values:
   game_load_board(gameon,0,spec)
-    Which is: 2046229760
+    Which is: -2111898368
   -1
 [  FAILED  ] game_load_board.incomplete_spec (0 ms)
 [ RUN      ] game_load_board.valid_spec
 /home/carson/Projects/msu/csci-366-fall2020/grading/scripts/repos/gaberial_darity/battlebit/googletest/game.cpp:230: Failure
 Expected equality of these values:
   game_load_board(gameon, 0, spec)
-    Which is: 2046229760
+    Which is: -2111898368
   1
 [  FAILED  ] game_load_board.valid_spec (0 ms)
-[----------] 3 tests from game_load_board (1 ms total)
+[----------] 3 tests from game_load_board (0 ms total)
 
 [----------] 1 test from game_status
 [ RUN      ] game_status.is_correct
 /home/carson/Projects/msu/csci-366-fall2020/grading/scripts/repos/gaberial_darity/battlebit/googletest/game.cpp:239: Failure
 Expected equality of these values:
   game_load_board(pGame, 0, spec)
-    Which is: 2046229760
+    Which is: -2111898368
   1
 [  FAILED  ] game_status.is_correct (0 ms)
 [----------] 1 test from game_status (0 ms total)

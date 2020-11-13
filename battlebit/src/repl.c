@@ -155,10 +155,75 @@ void repl_print_ships(player_info *player_info, char_buff *buffer) {
 }
 
 void repl_print_hits(struct player_info *player_info, struct char_buff *buffer) {
+    //COMPLETE
     // Step 6 - Implement this to print out a visual representation of the shots
     // that the player has taken and if they are a hit or not.  You will again need
     // to use bit-masking, but this time you will need to consult two values: both
     // hits and shots values in the players game struct.  If a shot was fired at
     // a given spot and it was a hit, print 'H', if it was a miss, print 'M'.  If
     // no shot was taken at a position, print a space character ' '
+
+    unsigned long long int hitsHolder = player_info->hits;
+    unsigned long long int shotsHolder = player_info->shots;
+    unsigned long long int mask = 1ull;
+    char board[181] = "  0 1 2 3 4 5 6 7 \n";
+    char colNum = '0';
+    int iColNum;
+    char space = ' ';
+    //char empty = '_';
+
+    //cb_append(buffer," 0 1 2 3 4 5 6 7 \n");
+    //printf(buffer);
+
+    //char star = '*';
+    char hit = 'H';
+    char miss = 'M';
+    strncat(board,&colNum,1);
+    strncat(board,&space,1);
+    iColNum = colNum -'0';
+    iColNum++;
+    colNum = iColNum +'0';
+
+    for(int j = 64; j >= 1; j--) {
+        if(j%8 == 0 && j != 64){
+            strncat(board,"\n", 1);
+            strncat(board,&colNum,1);
+            strncat(board,&space,1);
+            iColNum = colNum -'0';
+            iColNum++;
+            colNum = iColNum +'0';
+            if (mask & shotsHolder && mask & hitsHolder) {
+                strncat(board,&hit,1);
+                strncat(board,&space,1);
+                mask = mask << 1u;
+            } else if(mask & shotsHolder){
+                strncat(board,&miss,1);
+                strncat(board,&space,1);
+                mask = mask << 1u;
+            }else{
+                strncat(board,&space,1);
+                strncat(board,&space,1);
+                mask = mask << 1u;
+            }
+        }else{
+            if (mask & shotsHolder && mask & hitsHolder) {
+                strncat(board,&hit,1);
+                strncat(board,&space,1);
+                mask = mask << 1u;
+            } else if(mask & shotsHolder){
+                strncat(board,&miss,1);
+                strncat(board,&space,1);
+                mask = mask << 1u;
+            }else{
+                strncat(board,&space,1);
+                strncat(board,&space,1);
+                mask = mask << 1u;
+            }
+        }
+        //printf(buffer);
+    }
+
+    strncat(board,"\n", 1);
+
+    cb_append(buffer,board);
 }

@@ -51,7 +51,7 @@ string: Foo
 [       OK ] game_fire.miss_fire2 (0 ms)
 [ RUN      ] game_fire.invalid_fire
 [       OK ] game_fire.invalid_fire (0 ms)
-[----------] 6 tests from game_fire (1 ms total)
+[----------] 6 tests from game_fire (0 ms total)
 
 [----------] 2 tests from add_ship_horizontal
 [ RUN      ] add_ship_horizontal.empty_ship
@@ -85,8 +85,8 @@ string: Foo
 [ RUN      ] repl_print_ships.print_ships
 [       OK ] repl_print_ships.print_ships (0 ms)
 [ RUN      ] repl_print_ships.print_ship_status
-[       OK ] repl_print_ships.print_ship_status (0 ms)
-[----------] 2 tests from repl_print_ships (0 ms total)
+[       OK ] repl_print_ships.print_ship_status (1 ms)
+[----------] 2 tests from repl_print_ships (1 ms total)
 
 [----------] 2 tests from repl_print_hits
 [ RUN      ] repl_print_hits.print_hits

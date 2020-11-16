@@ -85,15 +85,15 @@ string: Foo
 [ RUN      ] repl_print_ships.print_ships
 [       OK ] repl_print_ships.print_ships (0 ms)
 [ RUN      ] repl_print_ships.print_ship_status
-[       OK ] repl_print_ships.print_ship_status (1 ms)
-[----------] 2 tests from repl_print_ships (1 ms total)
+[       OK ] repl_print_ships.print_ship_status (0 ms)
+[----------] 2 tests from repl_print_ships (0 ms total)
 
 [----------] 2 tests from repl_print_hits
 [ RUN      ] repl_print_hits.print_hits
 [       OK ] repl_print_hits.print_hits (0 ms)
 [ RUN      ] repl_print_hits.print_miss
-[       OK ] repl_print_hits.print_miss (0 ms)
-[----------] 2 tests from repl_print_hits (0 ms total)
+[       OK ] repl_print_hits.print_miss (1 ms)
+[----------] 2 tests from repl_print_hits (1 ms total)
 
 [----------] Global test environment tear-down
 [==========] 23 tests from 9 test suites ran. (1 ms total)

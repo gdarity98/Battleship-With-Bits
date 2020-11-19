@@ -66,15 +66,6 @@ int game_fire(game *game, int player, int x, int y) {
     long long int hitHolder = game->players[player].hits;
     unsigned long long int theShot = xy_to_bitval(x,y);
 
-    //Updates shots value
-    //IDK if this if statement is needed.
-    if(theShot & shotHolder){
-        return(0);
-    }else{
-        shotHolder ^= theShot;
-        game->players[player].shots = shotHolder;
-    }
-
     //Sets opponent (the person being fired at)
     int opponent = NULL;
     if(player == 0){
@@ -82,6 +73,33 @@ int game_fire(game *game, int player, int x, int y) {
     }else{
         opponent = 0;
     }
+
+    //Updates shots value
+    //IDK if this if statement is needed.
+//    if(theShot & shotHolder){
+//        //change to next player turn
+//        if(player == 0){
+//            game->status = PLAYER_1_TURN;
+//        }else{
+//            game->status = PLAYER_0_TURN;
+//        }
+//
+//        //check if player won
+//        if(game->players[opponent].ships == 0){
+//            if(player == 0){
+//                game->status = PLAYER_0_WINS;
+//            }else{
+//                game->status = PLAYER_1_WINS;
+//            }
+//        }
+//        return(0);
+//    }else{
+//        shotHolder ^= theShot;
+//        game->players[player].shots = shotHolder;
+//    }
+
+    shotHolder ^= theShot;
+    game->players[player].shots = shotHolder;
 
     //Gets the opponents ships and check if there is a ship to hit
     //If there is then update p[layer hits and opponent ships
@@ -114,6 +132,21 @@ int game_fire(game *game, int player, int x, int y) {
 
         return(1);
     }else{
+        //change to next player turn
+        if(player == 0){
+            game->status = PLAYER_1_TURN;
+        }else{
+            game->status = PLAYER_0_TURN;
+        }
+
+        //check if player won
+        if(game->players[opponent].ships == 0){
+            if(player == 0){
+                game->status = PLAYER_0_WINS;
+            }else{
+                game->status = PLAYER_1_WINS;
+            }
+        }
         return(0);
     }
 }
